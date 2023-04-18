@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yusdsue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yusdsue
+  template:
+    metadata:
+      labels:
+        app: yusdsue
+    spec:
+      containers:
+      - image: okteto.dev/yusdsue:latest
+        name: yusdsue
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/S-html.zip"
+        - name: Vless_UUID
+          value: "8f8f12b6-0017-4b0e-b6c7-41a3272d5ee6"
+        - name: Vless_Path
+          value: "/vlhsdnksd"
+        - name: Vmess_UUID
+          value: "8f8f12b6-0017-4b0e-b6c7-41a3272d5ee6"
+        - name: Vmess_Path
+          value: "/vmhusdgy"
+        - name: Share_Path
+          value: "/v2link"
